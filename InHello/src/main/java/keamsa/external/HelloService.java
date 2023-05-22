@@ -7,7 +7,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(name = "InHello", url = "${api.url.InHello}")
+@FeignClient(
+    name = "InHello",
+    url = "${api.url.InHello}",
+    fallback = HelloServiceImpl.class
+)
 public interface HelloService {
     @RequestMapping(method = RequestMethod.POST, path = "/hellos")
     public void hello(@RequestBody Hello hello);
