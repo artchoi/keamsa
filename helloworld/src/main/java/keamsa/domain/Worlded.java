@@ -1,23 +1,13 @@
 package keamsa.domain;
 
 import java.util.*;
-import keamsa.domain.*;
 import keamsa.infra.AbstractEvent;
-import lombok.*;
+import lombok.Data;
 
 @Data
-@ToString
 public class Worlded extends AbstractEvent {
 
     private Long id;
     private String world;
     private Integer count;
-
-    public Worlded(World aggregate) {
-        super(aggregate);
-    }
-
-    public Worlded() {
-        super();
-    }
 }

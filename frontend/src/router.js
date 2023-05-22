@@ -12,6 +12,7 @@ import WorldManager from "./components/listers/WorldCards"
 import WorldDetail from "./components/listers/WorldDetail"
 
 
+
 export default new Router({
     // mode: 'history',
     base: process.env.BASE_URL,
@@ -37,6 +38,7 @@ export default new Router({
                 name: 'WorldDetail',
                 component: WorldDetail
             },
+
 
 
 

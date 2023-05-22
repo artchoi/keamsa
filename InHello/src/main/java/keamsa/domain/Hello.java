@@ -22,6 +22,11 @@ public class Hello {
     public void onPostPersist() {
         Hellod hellod = new Hellod(this);
         hellod.publishAfterCommit();
+        // Get request from Hello
+        //keamsa.external.Hello hello =
+        //    Application.applicationContext.getBean(keamsa.external.HelloService.class)
+        //    .getHello(/** mapping value needed */);
+
     }
 
     public static HelloRepository repository() {

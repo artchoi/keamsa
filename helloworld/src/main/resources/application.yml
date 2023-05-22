@@ -2,7 +2,7 @@ server:
   port: 8080
 spring:
   application:
-    name: inhello
+    name: helloworld
 ---
 
 spring:
@@ -27,7 +27,7 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: InHello
+          group: helloworld
           destination: keamsa
           contentType: application/json
         event-out:
@@ -39,13 +39,9 @@ logging:
     org.hibernate.type: trace
     org.springframework.cloud: debug
 
-api:
-  url:
-    InHello: localhost:8081
-
 
 server:
-  port: 8081
+  port: 8083
 
 ---
 
@@ -66,15 +62,11 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: InHello
+          group: helloworld
           destination: keamsa
           contentType: application/json
         event-out:
           destination: keamsa
           contentType: application/json
-
-api:
-  url:
-    InHello:8080
 
 

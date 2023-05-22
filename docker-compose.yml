@@ -51,3 +51,17 @@ services:
       - ./OutHello:/usr/src
       - ./maven-repo:/root/.m2
       
+  helloworld:
+    depends_on: 
+      - kafka
+    image: adoptopenjdk/maven-openjdk11:latest
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    command: mvn spring-boot:run
+    ports:
+      - 8083:8083
+    working_dir: /usr/src
+    volumes:
+      - ./helloworld:/usr/src
+      - ./maven-repo:/root/.m2
+      
